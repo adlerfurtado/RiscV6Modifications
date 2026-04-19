@@ -107,3 +107,15 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+uint64
+sys_getcnt(void)
+{
+  int num;
+  argint(0, &num);
+
+  if(num < 0 || num >= MAX_SYSCALLS)
+    return -1;
+
+  return syscall_count[num];
+}
