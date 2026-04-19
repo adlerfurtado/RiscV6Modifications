@@ -7,6 +7,10 @@
 #include "proc.h"
 #include "vm.h"
 
+#define MAX_SYSCALLS 64
+
+extern int syscall_count[MAX_SYSCALLS];
+
 uint64
 sys_exit(void)
 {
