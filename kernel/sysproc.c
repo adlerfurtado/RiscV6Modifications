@@ -118,8 +118,8 @@ sys_getcnt(void)
   int num;
   argint(0, &num);
 
-  if(num < 0 || num >= MAX_SYSCALLS)
+  if(num < 0 || num >= MAX_SYSCALLS) // se syscall 'num' nao estiver nos limites definidos em syscall.h
     return -1;
 
-  return syscall_count[num];
+  return syscall_count[num]; // retorna a quantidade que o syscall 'num' teve durando a execucao do programa
 }

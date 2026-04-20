@@ -16,7 +16,7 @@ sub entry {
 	print ".global $name\n";
 	print "$name:\n";
     }
-    print " li a7, SYS_${name}\n";
+    print " li a7, SYS_${name}\n"; # carrega o numero da syscall em a7
     print " ecall\n";
     print " ret\n";
 }

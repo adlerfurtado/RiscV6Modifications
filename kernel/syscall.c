@@ -140,8 +140,8 @@ syscall(void)
   int num;
   struct proc *p = myproc();
 
-  num = p->trapframe->a7;
-
+  num = p->trapframe->a7; // kernel pega o numero da syscall que ta no reg a7
+                          // carregado pelo stub em usys.pl
   if(num > 0 && num < MAX_SYSCALLS) {
     syscall_count[num]++;
   }
